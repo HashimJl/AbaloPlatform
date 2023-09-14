@@ -24,5 +24,9 @@ Route::get('/', function () {
 Route::get('/testdata',
     [\App\Http\Controllers\AbTestDataController::class,'index']);
 
+Route::get('/articles/{searchterm}', [
+    \App\Http\Controllers\ArticleController::class, 'getArticles'
+]);
+
 
 
