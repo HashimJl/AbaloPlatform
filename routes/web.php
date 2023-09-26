@@ -18,7 +18,7 @@ Route::get('/isloggedin', [App\Http\Controllers\AuthController::class, 'islogged
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/testdata',
