@@ -28,5 +28,9 @@ Route::get('/articles/{searchterm}', [
     \App\Http\Controllers\ArticleController::class, 'getArticles'
 ]);
 
+Route::get('/categories', [
+    \App\Http\Controllers\CategoryController::class, 'index'
+]);
+
 
 
