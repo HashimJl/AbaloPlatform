@@ -39,6 +39,8 @@
         </div>
     </div>
 </nav>
+    @yield('cookiecheck') {{--to fix: cookie popup--}}
+
     @yield('content')
 </body>
 </html>
