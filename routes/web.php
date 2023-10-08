@@ -24,13 +24,20 @@ Route::get('/', function () {
 Route::get('/testdata',
     [\App\Http\Controllers\AbTestDataController::class,'index']);
 
-Route::get('/articles/{searchterm}', [
-    \App\Http\Controllers\ArticleController::class, 'getArticles'
-]);
-
 Route::get('/categories', [
     \App\Http\Controllers\CategoryController::class, 'index'
 ]);
+
+Route::controller(\App\Http\Controllers\ArticleController::class)->group(function () {
+    Route::get('articles/{searchterm}','getArticle');
+    Route::get('articles', 'getAllArticles');
+    Route::post('articles','newArticle');
+});
+
+Route::get('/newarticle', function () {
+    return view('newarticle');
+});
+
 
 
 

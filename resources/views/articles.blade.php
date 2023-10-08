@@ -17,8 +17,8 @@
                 <td>{{$value->ab_description}}</td>
                     @foreach($imgNames as $imgName)
                         @if($value->id == preg_replace("/.(jpg|png)/", "",$imgName))
-                            <td><img src="/articleimages/{{$imgName}}" width="100" height="100"> </td>
-                       @endif
+                            <td><img src="/articleimages/{{$imgName}}" width="100" height="100" alt="no image"> </td>
+                        @endif
                     @endforeach
             </tr>
         @endforeach

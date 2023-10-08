@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function getArticles() {
+    public function getArticle() {
         $searchterm = strtolower(last(request()->segments()));
         $imgNames = scandir("articleimages");
         $object = new Article();
@@ -16,5 +16,33 @@ class ArticleController extends Controller
         return view('articles')
             ->with('data',$data)
             ->with('imgNames',$imgNames);
+    }
+
+    public function getAllArticles() {
+        $obj = new Article();
+        $data = $obj->allArticles();
+        $imgNames = scandir("articleimages");
+
+        return view('articles')
+            ->with('data', $data)
+            ->with('imgNames', $imgNames);
+    }
+
+    public function newArticle(Request $request) {
+        $validated = $request->validate([
+            'name' => 'required',
+            'price' => 'required|gt:0|numeric',
+            'desc' => 'nullable'
+        ]);
+        $name = $validated['name'];
+        $price = $validated['price']*100;
+        $desc = $validated['desc'];
+
+        $now = date("Y-m-d H:i:s");
+        $obj = new Article();
+        $data = $obj->insertArticle($name,$price,$desc, $now);
+
+        return redirect('newarticle');
+
     }
 }
