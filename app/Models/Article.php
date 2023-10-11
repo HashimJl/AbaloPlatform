@@ -26,4 +26,14 @@ class Article extends Model
             "ab_createdate" => $date
         ]);
     }
+
+    public function deleteArticle($id) {
+        DB::table('ab_article')->where('id', $id)->delete();
+    }
+
+    public function getArticleID($id) {
+
+        return DB::table('ab_article')->select('*')
+            ->where('id', $id)->get();
+    }
 }

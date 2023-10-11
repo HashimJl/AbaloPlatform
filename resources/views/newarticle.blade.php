@@ -23,29 +23,40 @@
     </form>
 
     <script>
+        /*
+        axios.post('/articles', formData)
+                    .then(response => {
+                        console.log('Erfolg');
+                    })
+                    .catch(error => {
+                        console.log('Fehler');
+                    })
+        */
         window.addEventListener('load', () => {
+            let form = document.getElementById('newArticle');
+
             function sendData() {
                 let xhr = new XMLHttpRequest();
-                const form = document.getElementById('newArticle');
-                const data = new FormData(form);
-
+                let formData = new FormData(form);
                 xhr.open('POST', '/articles');
-
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4) {
                         if (xhr.status === 200) {
-                            console.log(xhr.responseText);
+                            console.log('Erfolgreich');
                         } else {
-                            console.error(xhr.statusText);
+                            console.error('Fehler');
                         }
                     }
                 }
-                xhr.send(data);
+                xhr.send(formData);
             }
             form.addEventListener('submit', (event) => {
                 event.preventDefault();
+                console.log('test');
                 sendData();
             });
         })
+
+
     </script>
 @endsection

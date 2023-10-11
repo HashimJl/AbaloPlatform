@@ -9,6 +9,7 @@
             <th>price</th>
             <th>description</th>
             <th>picture</th>
+            <th>shopping cart</th>
         </tr>
         @foreach($data as $key => $value)
             <tr>
@@ -20,7 +21,14 @@
                             <td><img src="/articleimages/{{$imgName}}" width="100" height="100" alt="no image"> </td>
                         @endif
                     @endforeach
+                <td><button> + </button>
+                    <button> - </button></td>
+                <td><button>Delete Article</button></td>
             </tr>
         @endforeach
     </table>
+
+    <script>
+
+    </script>
 @endsection

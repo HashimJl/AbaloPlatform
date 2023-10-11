@@ -45,4 +45,24 @@ class ArticleController extends Controller
         return redirect('newarticle');
 
     }
+
+    public function getArticle_api() {
+        $searchterm = strtolower(last(request()->segments()));
+        $object = new Article();
+        $data = $object->showArticle($searchterm);
+
+        return json_encode($data);
+    }
+
+    public function getArticleID_api($id) {
+        $obj = new Article();
+        $data = $obj->getArticleID($id);
+
+        return json_encode($data);
+    }
+
+    public function deleteArticle_api($id) {
+        $obj = new Article();
+        $obj->deleteArticle($id);
+    }
 }

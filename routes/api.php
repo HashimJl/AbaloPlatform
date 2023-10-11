@@ -16,4 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+
 });
+/*Route::get('articles/{searchterm}',[
+    \App\Http\Controllers\ArticleController::class, 'getArticle_api'
+]);
+*/
+
+Route::get('articles/{id}', [
+    \App\Http\Controllers\ArticleController::class, 'getArticleID_api'
+]);
+
+Route::delete('articles/{id}/delete', [
+    \App\Http\Controllers\ArticleController::class, 'deleteArticle_api'
+]);
