@@ -30,3 +30,7 @@ Route::get('articles/{id}', [
 Route::delete('articles/{id}/delete', [
     \App\Http\Controllers\ArticleController::class, 'deleteArticle_api'
 ]);
+
+Route::post('shoppingcart', [
+    \App\Http\Controllers\ArticleController::class, 'addToShoppingcart_api'
+]);

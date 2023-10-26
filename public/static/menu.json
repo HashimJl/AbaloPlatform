@@ -1,8 +1,9 @@
 {
     "home": "Home",
-    "kategorien": "Kategorien",
-    "verkaufen": "Verkaufen",
-    "unternehmen": "Unternehmen",
-    "philosophie": "Philosophie",
-    "karriere": "Karriere"
+    "article": "Articles",
+    "categories": "Categories",
+    "sell": "Sell",
+    "company": "Company",
+    "philosophy": "Philosophy",
+    "career": "Career"
 }

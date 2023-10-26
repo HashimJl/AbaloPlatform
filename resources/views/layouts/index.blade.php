@@ -26,15 +26,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">{{$data->home}}</a></li>
-                <li class="nav-item"><a class="nav-link" href="/categories">{{$data->kategorien}}</a></li>
-                <li class="nav-item"><a class="nav-link" href="/newarticle">{{$data->verkaufen}}</a></li>
+                <li class="nav-item"><a class="nav-link" href="/articles">{{$data->article}}</a></li>
+                <li class="nav-item"><a class="nav-link" href="/categories">{{$data->categories}}</a></li>
+                <li class="nav-item"><a class="nav-link" href="/newarticle">{{$data->sell}}</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{$data->unternehmen}}
+                        {{$data->company}}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">{{$data->philosophie}}</a></li>
-                        <li><a class="dropdown-item" href="#">{{$data->karriere}}</a></li>
+                        <li><a class="dropdown-item" href="#">{{$data->philosophy}}</a></li>
+                        <li><a class="dropdown-item" href="#">{{$data->career}}</a></li>
                     </ul>
                 </li>
             </ul>

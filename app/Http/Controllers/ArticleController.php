@@ -41,7 +41,6 @@ class ArticleController extends Controller
         $now = date("Y-m-d H:i:s");
         $obj = new Article();
         $data = $obj->insertArticle($name,$price,$desc, $now);
-
         return redirect('newarticle');
 
     }
@@ -50,19 +49,26 @@ class ArticleController extends Controller
         $searchterm = strtolower(last(request()->segments()));
         $object = new Article();
         $data = $object->showArticle($searchterm);
-
         return json_encode($data);
     }
 
     public function getArticleID_api($id) {
         $obj = new Article();
         $data = $obj->getArticleID($id);
-
         return json_encode($data);
     }
 
     public function deleteArticle_api($id) {
         $obj = new Article();
         $obj->deleteArticle($id);
+    }
+
+    public function addToShoppingcart_api($id) {
+        dd($id);
+        /*
+        $obj = new Article();
+        $now = date("Y-m-d H:i:s");
+        $obj->addToShoppingcart($id, $now);
+        */
     }
 }
