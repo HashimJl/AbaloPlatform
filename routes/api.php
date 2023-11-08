@@ -27,7 +27,7 @@ Route::get('articles/{id}', [
     \App\Http\Controllers\ArticleController::class, 'getArticleID_api'
 ]);
 
-Route::delete('articles/{id}/delete', [
+Route::delete('articles/{id}', [
     \App\Http\Controllers\ArticleController::class, 'deleteArticle_api'
 ]);
 

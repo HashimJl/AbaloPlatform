@@ -28,6 +28,7 @@
             axios.post('/articles', formData)
                 .then(response => {
                     console.log('Erfolg');
+
                 })
                 .catch(error => {
                     console.log('Fehler');
@@ -36,7 +37,6 @@
         form.addEventListener('submit', (event) => {
             let formData = new FormData(form);
             event.preventDefault();
-            console.log('test');
             sendData(formData);
         });
     </script>
