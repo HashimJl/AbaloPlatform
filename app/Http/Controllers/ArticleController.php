@@ -62,13 +62,4 @@ class ArticleController extends Controller
         $obj = new Article();
         $obj->deleteArticle($id);
     }
-
-    public function addToShoppingcart_api($id) {
-        dd($id);
-        /*
-        $obj = new Article();
-        $now = date("Y-m-d H:i:s");
-        $obj->addToShoppingcart($id, $now);
-        */
-    }
 }

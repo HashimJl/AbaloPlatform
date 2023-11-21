@@ -29,7 +29,6 @@
                 <li class="nav-item"><a class="nav-link" href="/articles">{{$data->article}}</a></li>
                 <li class="nav-item"><a class="nav-link" href="/categories">{{$data->categories}}</a></li>
                 <li class="nav-item"><a class="nav-link" href="/newarticle">{{$data->sell}}</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/shoppingcart">{{$data->cart}}</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{$data->company}}

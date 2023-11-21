@@ -36,12 +36,4 @@ class Article extends Model
         return DB::table('ab_article')->select('*')
             ->where('id', $id)->get();
     }
-
-    public function addToShoppingcart($articleID, $date) {
-        DB::table('ab_shoppingcart_item')->insert([
-            'ab_shoppingcart_id' => 1,
-            'ab_article_id' => $articleID,
-            'ab_createdate' => $date
-        ]);
-    }
 }
